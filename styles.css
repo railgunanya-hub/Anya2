@@ -1085,3 +1085,81 @@ footer {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* ===== Final approved fox artwork: direct crops from user-provided sprite ===== */
+.fox-crop {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 78px;
+  height: 104px;
+  background-image: url("assets/fox-roles.webp");
+  background-repeat: no-repeat;
+  background-size: 400% 200%;
+  filter: drop-shadow(0 7px 10px rgba(76, 65, 43, .13));
+}
+.fox-1 { background-position: 0% 0%; }
+.fox-2 { background-position: 33.333% 0%; }
+.fox-3 { background-position: 66.667% 0%; }
+.fox-4 { background-position: 100% 0%; }
+.fox-5 { background-position: 0% 100%; }
+.fox-6 { background-position: 33.333% 100%; }
+.fox-7 { background-position: 66.667% 100%; }
+.fox-8 { background-position: 100% 100%; }
+
+/* Floating role boxes: larger, looser and intentionally staggered */
+.mascot-rail {
+  width: 226px;
+  height: 680px;
+}
+.mascot-left { left: clamp(.35rem, 1.8vw, 2rem); }
+.mascot-right { right: clamp(.35rem, 1.8vw, 2rem); }
+.mascot-card {
+  min-width: 202px;
+  min-height: 112px;
+  gap: .72rem;
+  padding: .34rem 1rem .34rem .5rem;
+  border-radius: 22px;
+  font-size: 1rem;
+  line-height: 1.15;
+  box-shadow: 0 16px 38px rgba(75,92,64,.16);
+}
+.mascot-card > span:last-child {
+  white-space: nowrap;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+.mascot-left .c1 { top: 4%; left: 0; }
+.mascot-left .c2 { top: 28%; left: 34px; animation-delay: -.8s; }
+.mascot-left .c3 { top: 55%; left: 5px; animation-delay: -1.7s; }
+.mascot-left .c4 { top: 79%; left: 42px; animation-delay: -2.4s; }
+.mascot-right .c5 { top: 3%; right: 8px; }
+.mascot-right .c6 { top: 30%; right: 38px; animation-delay: -.9s; }
+.mascot-right .c7 { top: 56%; right: 2px; animation-delay: -1.8s; }
+.mascot-right .c8 { top: 80%; right: 34px; animation-delay: -2.7s; }
+
+/* Service cards use the same approved fox artwork, larger and cleaner */
+.service-fox-crop {
+  display: block;
+  width: 112px;
+  height: 149px;
+  margin: -1.2rem auto -.1rem;
+}
+.reference-services .service-card {
+  min-height: 260px;
+  padding-top: 1.05rem;
+}
+.reference-services .service-card h3 {
+  font-size: 1.16rem;
+  margin-top: .05rem;
+}
+.reference-services .service-card p {
+  font-size: .79rem;
+  line-height: 1.72;
+}
+
+@media (max-width: 1180px) {
+  .mascot-rail { width: 190px; }
+  .mascot-card { min-width: 176px; font-size: .9rem; }
+  .mascot-card .fox-crop { width: 68px; height: 91px; }
+}

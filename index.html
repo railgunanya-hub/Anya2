@@ -9,7 +9,8 @@
       content="合肥工业大学新媒体中心赴黄山暑期社会实践团队推出的乡村短剧 AI 创作助手。"
     />
     <title>乡村短剧 AI 创作助手｜合肥工业大学新媒体中心</title>
-    <link rel="icon" href="assets/media-badge.png" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preload" as="image" href="assets/baiji-dawn.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -130,7 +131,7 @@
 
         <header class="site-header">
           <a class="brand" href="#top" aria-label="返回首页">
-            <img src="assets/media-badge.png" alt="新媒体中心徽章" />
+            <img src="assets/media-badge.png" alt="新媒体中心徽章" width="54" height="54" decoding="async" fetchpriority="high" />
             <span>
               <strong>合肥工业大学新媒体中心</strong>
               <small>赴黄山“乡村短剧赋能乡村振兴”调研暑期社会实践团队</small>
@@ -184,14 +185,14 @@
           <button class="edge-arrow edge-arrow-left" type="button" id="prevSlide" aria-label="上一张图片">‹</button>
           <div class="carousel" id="carousel">
             <div class="carousel-track" id="carouselTrack">
-              <figure><img src="assets/practice/gallery-01.jpg" alt="山林中的瀑布与阳光" loading="eager" /><figcaption><strong>山林瀑布</strong><span>光落深谷</span></figcaption></figure>
-              <figure><img src="assets/practice/gallery-02.jpg" alt="夜色中的鱼灯与火花" loading="eager" /><figcaption><strong>鱼灯夜色</strong><span>火树流光</span></figcaption></figure>
-              <figure><img src="assets/practice/gallery-03.jpg" alt="青山水面上的竹筏" loading="eager" /><figcaption><strong>水上村落</strong><span>舟行青山</span></figcaption></figure>
-              <figure><img src="assets/practice/gallery-04.jpg" alt="晨光下的群山与云雾" loading="lazy" /><figcaption><strong>晨雾群山</strong><span>云海初醒</span></figcaption></figure>
-              <figure><img src="assets/practice/gallery-05.jpg" alt="蓝天下铺展的云海群山" loading="lazy" /><figcaption><strong>云海漫山</strong><span>山色铺展</span></figcaption></figure>
-              <figure><img src="assets/practice/gallery-06.jpg" alt="蓝天白云下的山谷乡野" loading="lazy" /><figcaption><strong>山谷乡野</strong><span>青山入镜</span></figcaption></figure>
-              <figure><img src="assets/practice/gallery-07.jpg" alt="日落下层叠的山峦" loading="lazy" /><figcaption><strong>日落群山</strong><span>天光收束</span></figcaption></figure>
-              <figure><img src="assets/practice/gallery-08.jpg" alt="阳光下的新鲜茶芽" loading="lazy" /><figcaption><strong>茶芽新绿</strong><span>一叶入镜</span></figcaption></figure>
+              <figure><img src="assets/practice/gallery-01.jpg" alt="山林中的瀑布与阳光" loading="eager" decoding="async" fetchpriority="high" /><figcaption><strong>山林瀑布</strong><span>光落深谷</span></figcaption></figure>
+              <figure><img src="assets/practice/gallery-02.jpg" alt="夜色中的鱼灯与火花" loading="lazy" decoding="async" fetchpriority="low" /><figcaption><strong>鱼灯夜色</strong><span>火树流光</span></figcaption></figure>
+              <figure><img src="assets/practice/gallery-03.jpg" alt="青山水面上的竹筏" loading="lazy" decoding="async" fetchpriority="low" /><figcaption><strong>水上村落</strong><span>舟行青山</span></figcaption></figure>
+              <figure><img src="assets/practice/gallery-04.jpg" alt="晨光下的群山与云雾" loading="lazy" decoding="async" fetchpriority="low" /><figcaption><strong>晨雾群山</strong><span>云海初醒</span></figcaption></figure>
+              <figure><img src="assets/practice/gallery-05.jpg" alt="蓝天下铺展的云海群山" loading="lazy" decoding="async" fetchpriority="low" /><figcaption><strong>云海漫山</strong><span>山色铺展</span></figcaption></figure>
+              <figure><img src="assets/practice/gallery-06.jpg" alt="蓝天白云下的山谷乡野" loading="lazy" decoding="async" fetchpriority="low" /><figcaption><strong>山谷乡野</strong><span>青山入镜</span></figcaption></figure>
+              <figure><img src="assets/practice/gallery-07.jpg" alt="日落下层叠的山峦" loading="lazy" decoding="async" fetchpriority="low" /><figcaption><strong>日落群山</strong><span>天光收束</span></figcaption></figure>
+              <figure><img src="assets/practice/gallery-08.jpg" alt="阳光下的新鲜茶芽" loading="lazy" decoding="async" fetchpriority="low" /><figcaption><strong>茶芽新绿</strong><span>一叶入镜</span></figcaption></figure>
             </div>
           </div>
           <button class="edge-arrow edge-arrow-right" type="button" id="nextSlide" aria-label="下一张图片">›</button>
@@ -337,7 +338,7 @@
         <div class="practice-cases-grid">
           <article class="case-card">
             <div class="case-media">
-              <img src="assets/practice/gallery-08.jpg" alt="富溪乡茶芽与茶产业实践影像" loading="lazy" />
+              <img src="assets/practice/gallery-08.jpg" alt="富溪乡茶芽与茶产业实践影像" loading="lazy" decoding="async" fetchpriority="low" />
               <div class="case-shade"></div>
               <h3>富溪乡 · 茶韵非遗</h3>
             </div>
@@ -349,7 +350,7 @@
 
           <article class="case-card">
             <div class="case-media">
-              <img src="assets/baiji-cloudsea.jpg" alt="白际乡云海与山野实践影像" loading="lazy" />
+              <img src="assets/baiji-cloudsea.jpg" alt="白际乡云海与山野实践影像" loading="lazy" decoding="async" fetchpriority="low" />
               <div class="case-shade"></div>
               <h3>白际乡 · 云海古道</h3>
             </div>
@@ -361,7 +362,7 @@
 
           <article class="case-card">
             <div class="case-media">
-              <img src="assets/practice/gallery-03.jpg" alt="西溪南水岸与徽派村落实践影像" loading="lazy" />
+              <img src="assets/practice/gallery-03.jpg" alt="西溪南水岸与徽派村落实践影像" loading="lazy" decoding="async" fetchpriority="low" />
               <div class="case-shade"></div>
               <h3>西溪南 · 徽韵绿境</h3>
             </div>
@@ -391,13 +392,13 @@
       </section>
 
       <footer id="about">
-        <img src="assets/media-badge.png" alt="" />
+        <img src="assets/media-badge.png" alt="" width="58" height="58" loading="lazy" decoding="async" />
         <p>合肥工业大学新媒体中心赴黄山“乡村短剧赋能乡村振兴”调研暑期社会实践团队</p>
         <span>发现乡村之美 · 讲好中国故事</span>
       </footer>
     </main>
 
-    <script src="config.js"></script>
-    <script src="script.js"></script>
+    <script>window.APP_CONFIG = { apiEndpoint: "/api/generate" };</script>
+    <script src="script.js" defer></script>
   </body>
 </html>

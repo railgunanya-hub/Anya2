@@ -86,7 +86,7 @@ composer.addEventListener("submit", async (event) => {
   submitLabel.textContent = "正在生成…";
 
   if (!config.apiEndpoint) {
-    showResult("AI 接口地址尚未配置，请检查 config.js。");
+    showResult("AI 接口地址尚未配置，请检查页面中的 API 配置。");
     submitButton.disabled = false;
     submitLabel.textContent = "生成创作建议";
     return;

@@ -116,6 +116,7 @@
               id="prompt"
               name="prompt"
               rows="5"
+              maxlength="12000"
               placeholder="请输入你的问题，例如：
 • 帮我设计一个关于黄山毛峰的 60 秒短剧
 • 适合在白际乡拍的综艺短剧有什么创意
@@ -133,9 +134,9 @@
                 <div class="preview-list" id="previewList" aria-live="polite"></div>
               </div>
 
-              <div class="add-material">
-                <span class="clip">⌕</span>
-                <span>添加资料</span>
+              <div class="knowledge-status" title="已内置富溪乡、白际乡、西溪南镇实践经验与通用短剧创作方法">
+                <span class="knowledge-dot">✓</span>
+                <span>三地经验库已加载</span>
               </div>
 
               <div class="counter">0/2000</div>
@@ -154,13 +155,20 @@
                 <p class="section-kicker">AI RESPONSE</p>
                 <h3 id="result-title">创作结果</h3>
               </div>
-              <button type="button" id="closeResult" aria-label="关闭结果并返回完整页面">×</button>
+              <div class="result-actions">
+                <button type="button" class="text-action stop-action" id="stopGeneration" hidden>停止生成</button>
+                <button type="button" class="text-action" id="copyResult" disabled>复制结果</button>
+                <button type="button" class="text-action" id="newChat">重新开始</button>
+                <button type="button" class="icon-action" id="closeResult" aria-label="关闭结果并返回完整页面">×</button>
+              </div>
             </div>
             <div class="loading-state" id="loadingState">
               <span></span><span></span><span></span>
               <p>正在结合三地实践经验整理创作思路……</p>
             </div>
             <div class="result-content" id="resultContent"></div>
+            <div class="source-chips" id="sourceChips" aria-label="本次回答参考的经验库来源"></div>
+            <p class="followup-note" id="followupNote" hidden>可以继续在下方输入框追问，我会保留本轮对话上下文。</p>
           </section>
         </section>
 

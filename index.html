@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#8f1d25" />
+    <meta
+      name="description"
+      content="合肥工业大学新媒体中心赴黄山暑期社会实践团队推出的乡村短剧 AI 创作助手。"
+    />
+    <title>乡村短剧 AI 创作助手｜合肥工业大学新媒体中心</title>
+    <link rel="icon" href="assets/media-badge.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#studio">跳到 AI 创作区</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="返回首页">
+        <img src="assets/media-badge.png" alt="新媒体中心徽章" />
+        <span>
+          <strong>青春影像 · 乡村新声</strong>
+          <small>合肥工业大学暑期社会实践成果</small>
+        </span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#studio">AI 创作</a>
+        <a href="#gallery">实践影像</a>
+        <button class="outline-button" id="resetView" type="button">回到首页</button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-art" aria-hidden="true"></div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow"><span></span> 青春三下乡 · AI 赋能乡村振兴</p>
+          <h1 id="hero-title">让乡土故事<br /><em>被看见，也被记住</em></h1>
+          <p class="team-name">
+            合肥工业大学新媒体中心赴黄山“乡村短剧赋能乡村振兴”调研暑期社会实践团队
+          </p>
+          <div class="place-tags" aria-label="实践地点">
+            <span>富溪乡 · 茶韵非遗</span>
+            <span>白际乡 · 云海古道</span>
+            <span>西溪南 · 徽韵绿境</span>
+          </div>
+          <a class="hero-cta" href="#studio">
+            开始创作
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </a>
+        </div>
+      </section>
+
+      <section class="studio-wrap" id="studio" aria-labelledby="studio-title">
+        <div class="studio-heading">
+          <div>
+            <p class="section-kicker">RURAL STORY STUDIO</p>
+            <h2 id="studio-title">乡村短剧 AI 创作助手</h2>
+          </div>
+          <span class="api-status"><i></i> API 接口已预留</span>
+        </div>
+
+        <div class="studio-grid">
+          <form class="composer" id="composer">
+            <label for="prompt">告诉我，你想创作什么？</label>
+            <textarea
+              id="prompt"
+              name="prompt"
+              rows="7"
+              placeholder="例如：请以富溪乡的一片茶叶为主角，设计一个 60 秒、有反转的短剧脚本……"
+              required
+            ></textarea>
+
+            <div class="quick-prompts" aria-label="快捷创作类型">
+              <button type="button" data-prompt="围绕当地特色设计一个有吸引力的乡村短剧选题，并说明核心冲突。">选题策划</button>
+              <button type="button" data-prompt="请创作一个节奏紧凑、适合短视频平台发布的乡村短剧脚本。">短剧脚本</button>
+              <button type="button" data-prompt="请把这个故事整理成可直接拍摄的分镜表，包括景别、画面、台词和时长。">分镜设计</button>
+              <button type="button" data-prompt="请为这次乡村调研设计一份层次清晰、便于现场追问的采访提纲。">采访提纲</button>
+            </div>
+
+            <div class="upload-zone" id="uploadZone">
+              <input id="imageInput" name="images" type="file" accept="image/*" multiple />
+              <label for="imageInput">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L7 9m5-5 5 5M5 15v4h14v-4" /></svg>
+                <span><strong>上传参考图片</strong><small>支持 JPG、PNG、WEBP，可多选</small></span>
+              </label>
+              <div class="preview-list" id="previewList" aria-live="polite"></div>
+            </div>
+
+            <button class="submit-button" type="submit">
+              <span>生成创作建议</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 14-7-4 14-3-6-7-1Z" /></svg>
+            </button>
+            <p class="privacy-note">上传内容仅用于本次分析；正式接入 API 后请同步配置隐私与数据保留规则。</p>
+          </form>
+
+          <aside class="guide-card" aria-label="助手能力说明">
+            <div class="guide-mark">AI</div>
+            <h3>从一个灵感，到一套可拍方案</h3>
+            <p>结合乡村资源、传播平台与拍摄条件，帮助你完成创作全流程。</p>
+            <ul>
+              <li><span>01</span> 选题与故事结构</li>
+              <li><span>02</span> 剧本、台词与分镜</li>
+              <li><span>03</span> 采访、拍摄与剪辑建议</li>
+              <li><span>04</span> 标题、简介与传播文案</li>
+            </ul>
+            <div class="location-note">
+              <strong>在地知识</strong>
+              <span>富溪 · 白际 · 西溪南</span>
+            </div>
+          </aside>
+
+          <section class="result-panel" id="resultPanel" aria-labelledby="result-title" aria-live="polite">
+            <div class="result-toolbar">
+              <div>
+                <p class="section-kicker">AI RESPONSE</p>
+                <h3 id="result-title">创作结果</h3>
+              </div>
+              <button type="button" id="closeResult" aria-label="关闭结果并返回完整页面">×</button>
+            </div>
+            <div class="loading-state" id="loadingState">
+              <span></span><span></span><span></span>
+              <p>正在整理乡村叙事线索与拍摄思路……</p>
+            </div>
+            <div class="result-content" id="resultContent"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <div>
+            <p class="section-kicker">FIELD NOTES · HUANGSHAN</p>
+            <h2 id="gallery-title">沿着镜头，走进乡村现场</h2>
+          </div>
+          <div class="carousel-controls">
+            <button type="button" id="prevSlide" aria-label="上一张图片">←</button>
+            <button type="button" id="togglePlay" aria-label="暂停自动播放">Ⅱ</button>
+            <button type="button" id="nextSlide" aria-label="下一张图片">→</button>
+          </div>
+        </div>
+
+        <div class="carousel" id="carousel">
+          <div class="carousel-track" id="carouselTrack">
+            <figure><img src="assets/baiji-pavilion.jpg" alt="白际乡山间亭阁与晴空" /><figcaption><strong>白际乡</strong><span>山路与乡土记忆</span></figcaption></figure>
+            <figure><img src="assets/baiji-cloudsea.jpg" alt="群山之间铺展的云海" /><figcaption><strong>白际乡</strong><span>云海漫过群峰</span></figcaption></figure>
+            <figure><img src="assets/baiji-dawn.jpg" alt="晨曦下的群山与云海" /><figcaption><strong>黄山之晨</strong><span>天光照进故事</span></figcaption></figure>
+            <figure><img src="assets/baiji-sunrise.jpg" alt="群山日出与翻涌云雾" /><figcaption><strong>实践影像</strong><span>记录真实，也寻找表达</span></figcaption></figure>
+            <figure><img src="assets/baiji-morning.jpg" alt="霞光与层叠山峦" /><figcaption><strong>乡村新声</strong><span>让在地经验被听见</span></figcaption></figure>
+            <figure><img src="assets/baiji-valley.jpg" alt="蓝天下的山谷、茶园与村庄" /><figcaption><strong>绿水青山</strong><span>把产业写进镜头</span></figcaption></figure>
+          </div>
+        </div>
+        <div class="carousel-dots" id="carouselDots" aria-label="轮播图页码"></div>
+      </section>
+    </main>
+
+    <footer>
+      <img src="assets/media-badge.png" alt="" />
+      <p>合肥工业大学新媒体中心赴黄山“乡村短剧赋能乡村振兴”调研暑期社会实践团队</p>
+      <span>以青年影像记录乡土，以智能工具助力创作</span>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

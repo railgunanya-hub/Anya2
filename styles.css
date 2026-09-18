@@ -1163,3 +1163,226 @@ footer {
   .mascot-card { min-width: 176px; font-size: .9rem; }
   .mascot-card .fox-crop { width: 68px; height: 91px; }
 }
+
+
+/* ===== AI conversation polish ===== */
+.knowledge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: .38rem;
+  padding: .38rem .58rem;
+  color: #557064;
+  background: #f1f5ee;
+  border: 1px solid rgba(47,111,69,.10);
+  border-radius: 999px;
+  font-size: .67rem;
+  white-space: nowrap;
+}
+.knowledge-dot {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--green);
+  font-size: .62rem;
+  font-weight: 900;
+}
+
+.result-toolbar {
+  gap: 1rem;
+  padding-bottom: .15rem;
+}
+.result-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: .38rem;
+}
+.result-toolbar .text-action,
+.result-toolbar .icon-action {
+  width: auto;
+  height: auto;
+  min-height: 32px;
+  padding: .46rem .7rem;
+  border: 1px solid rgba(47,111,69,.10);
+  border-radius: 999px;
+  color: #496257;
+  background: #f1f5ef;
+  font-size: .68rem;
+  line-height: 1;
+  transition: .18s ease;
+}
+.result-toolbar .text-action:hover:not(:disabled),
+.result-toolbar .icon-action:hover:not(:disabled) {
+  color: #fff;
+  background: var(--green);
+}
+.result-toolbar .text-action:disabled {
+  opacity: .45;
+  cursor: default;
+}
+.result-toolbar .stop-action {
+  color: #a4483b;
+  background: #fff3ef;
+  border-color: rgba(164,72,59,.12);
+}
+.result-toolbar .icon-action {
+  width: 32px;
+  min-width: 32px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+}
+
+.result-content {
+  color: #2e4439;
+  line-height: 1.82;
+}
+.result-content h2,
+.result-content h3,
+.result-content h4 {
+  margin: 1.15rem 0 .45rem;
+  color: #1f4835;
+  font-family: "Noto Serif SC","Songti SC",serif;
+  line-height: 1.35;
+}
+.result-content h2 { font-size: 1.22rem; }
+.result-content h3 { font-size: 1.08rem; }
+.result-content h4 { font-size: .98rem; }
+.result-content p {
+  margin: .48rem 0;
+}
+.result-content ul,
+.result-content ol {
+  margin: .5rem 0 .75rem;
+  padding-left: 1.5rem;
+}
+.result-content li {
+  margin: .3rem 0;
+}
+.result-content strong {
+  color: #183f2d;
+}
+.result-content code {
+  padding: .12rem .32rem;
+  border-radius: 5px;
+  background: #f0f3ed;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .86em;
+}
+.result-content pre {
+  margin: .8rem 0;
+  padding: .85rem 1rem;
+  overflow-x: auto;
+  border-radius: 12px;
+  color: #eaf2ec;
+  background: #18372d;
+  line-height: 1.65;
+}
+.result-content pre code {
+  padding: 0;
+  color: inherit;
+  background: transparent;
+}
+.result-content blockquote {
+  margin: .7rem 0;
+  padding: .7rem .9rem;
+  border-left: 3px solid #d8b56d;
+  border-radius: 0 10px 10px 0;
+  color: #596c62;
+  background: #faf5e9;
+}
+
+.source-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .38rem;
+  margin-top: .85rem;
+}
+.source-chips:empty { display: none; }
+.source-chips span {
+  padding: .36rem .58rem;
+  border-radius: 999px;
+  color: #6a746d;
+  background: #f5f1e7;
+  border: 1px solid rgba(92,96,74,.08);
+  font-size: .62rem;
+}
+.source-chips span:first-child::before {
+  content: "参考经验库 · ";
+  color: #9b7a42;
+}
+.followup-note {
+  margin: .7rem 0 0;
+  color: #78857d;
+  font-size: .7rem;
+}
+
+.focus-mode .studio-card {
+  display: flex;
+  flex-direction: column;
+}
+.focus-mode .studio-topline {
+  display: none;
+}
+.focus-mode .result-panel {
+  order: 1;
+}
+.focus-mode .composer {
+  display: block;
+  order: 2;
+  margin-top: .85rem;
+  box-shadow: 0 10px 26px rgba(58,86,65,.07);
+}
+.focus-mode .composer textarea {
+  min-height: 98px;
+}
+.focus-mode .privacy-note {
+  padding-bottom: .45rem;
+}
+.focus-mode .result-panel.visible {
+  min-height: 360px;
+}
+
+@media (max-width: 700px) {
+  .result-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .result-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .result-toolbar .text-action {
+    padding: .5rem .65rem;
+  }
+  .knowledge-status {
+    order: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .result-panel {
+    padding: .85rem;
+  }
+  .result-content {
+    font-size: .84rem;
+  }
+  .focus-mode .studio-card {
+    width: calc(100% - .7rem);
+    margin-top: 2.2rem;
+    padding: .75rem;
+  }
+  .focus-mode .composer-actions {
+    gap: .45rem;
+  }
+  .knowledge-status {
+    max-width: 155px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

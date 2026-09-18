@@ -9,10 +9,20 @@ const resultContent = document.querySelector("#resultContent");
 const submitButton = composer.querySelector(".submit-button");
 const submitLabel = submitButton.querySelector("span");
 let selectedFiles = [];
+const counter = document.querySelector(".counter");
+const MAX_VISIBLE_INPUT = 2000;
+
+function updateCounter() {
+  if (!counter) return;
+  counter.textContent = `${Math.min(promptInput.value.length, MAX_VISIBLE_INPUT)}/${MAX_VISIBLE_INPUT}`;
+}
+promptInput.addEventListener("input", updateCounter);
+updateCounter();
 
 document.querySelectorAll("[data-prompt]").forEach((button) => {
   button.addEventListener("click", () => {
     promptInput.value = button.dataset.prompt;
+    updateCounter();
     promptInput.focus();
   });
 });
@@ -202,15 +212,16 @@ slides.forEach((_, index) => {
 });
 
 function visibleCount() {
-  if (window.innerWidth <= 520) return 1;
-  if (window.innerWidth <= 860) return 1;
-  return 3;
+  if (window.innerWidth <= 560) return 2;
+  if (window.innerWidth <= 860) return 3;
+  if (window.innerWidth <= 1180) return 4;
+  return 6;
 }
 
 function goTo(index) {
   const maxIndex = Math.max(0, slides.length - visibleCount());
   current = index > maxIndex ? 0 : index < 0 ? maxIndex : index;
-  const gap = 16;
+  const gap = 2;
   const slideWidth = slides[0].getBoundingClientRect().width;
   track.style.transform = `translateX(-${current * (slideWidth + gap)}px)`;
   [...dotsWrap.children].forEach((dot, dotIndex) => dot.classList.toggle("active", dotIndex === current));
@@ -218,7 +229,7 @@ function goTo(index) {
 
 function restartTimer() {
   window.clearInterval(timer);
-  if (playing) timer = window.setInterval(() => goTo(current + 1), 2800);
+  if (playing) timer = window.setInterval(() => goTo(current + 1), 2200);
 }
 
 document.querySelector("#prevSlide").addEventListener("click", () => {

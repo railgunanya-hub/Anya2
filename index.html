@@ -11,117 +11,11 @@
     <title>乡村短剧 AI 创作助手｜合肥工业大学新媒体中心</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="preload" as="image" href="assets/baiji-dawn.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/fox-roles.webp" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
 
-    <svg class="fox-symbols" width="0" height="0" aria-hidden="true" focusable="false">
-      <defs>
-        <symbol id="fox-base" viewBox="0 0 120 120">
-          <path d="M27 79c-18 5-24 22-17 30 9 10 28 2 36-13" fill="#e7792d" stroke="#8d4a24" stroke-width="2.2"/>
-          <path d="M12 99c9 2 17-1 23-7-3 9-10 16-19 15-4 0-7-3-4-8Z" fill="#fff0d9"/>
-          <path d="M36 75c-10 7-15 21-12 36h72c3-15-3-29-14-36" fill="#f4c952" stroke="#8c4e28" stroke-width="2.4"/>
-          <path d="M37 83c8 7 37 7 46 0l6 29H31l6-29Z" fill="#f8d76c"/>
-          <path d="M29 33 35 8l20 18M91 33 84 8 65 26" fill="#e7772b" stroke="#8d4a24" stroke-width="2.8" stroke-linejoin="round"/>
-          <path d="M34 25 37 13l12 12M86 25 82 13 70 25" fill="#1f385a"/>
-          <path d="M37 20 42 15l4 10M83 20 78 15l-4 10" fill="none" stroke="#f0b045" stroke-width="2.2" stroke-linecap="round"/>
-          <ellipse cx="60" cy="52" rx="34" ry="30" fill="#ec7b2d" stroke="#8d4a24" stroke-width="2.8"/>
-          <path d="M31 54c8 18 19 27 29 27s22-9 29-27c-7 8-16 12-29 12S38 62 31 54Z" fill="#fff3e4"/>
-          <ellipse cx="46" cy="48" rx="7.5" ry="9.5" fill="#4b271c"/>
-          <ellipse cx="74" cy="48" rx="7.5" ry="9.5" fill="#4b271c"/>
-          <circle cx="43.5" cy="44.5" r="2.5" fill="#fff"/><circle cx="71.5" cy="44.5" r="2.5" fill="#fff"/>
-          <circle cx="48.5" cy="51" r="1.3" fill="#fff" opacity=".7"/><circle cx="76.5" cy="51" r="1.3" fill="#fff" opacity=".7"/>
-          <ellipse cx="60" cy="61" rx="3.6" ry="2.8" fill="#6d3e2d"/>
-          <path d="M54 65c2 4 10 4 12 0" fill="none" stroke="#6d3e2d" stroke-width="2" stroke-linecap="round"/>
-          <ellipse cx="36" cy="61" rx="5" ry="2.7" fill="#f59a8f" opacity=".72"/>
-          <ellipse cx="84" cy="61" rx="5" ry="2.7" fill="#f59a8f" opacity=".72"/>
-          <path d="M45 78c4 5 26 5 31 0" fill="none" stroke="#fff7d9" stroke-width="4" stroke-linecap="round"/>
-        </symbol>
-
-        <symbol id="fox-idea" viewBox="0 0 120 120">
-          <use href="#fox-base"/>
-          <circle cx="19" cy="49" r="12" fill="#ffd95a" stroke="#d49927" stroke-width="2.5"/>
-          <path d="M19 31v-7M5 38l-5-5M33 38l5-5M1 50h-7M39 50h7" stroke="#e1a226" stroke-width="3" stroke-linecap="round"/>
-          <path d="M14 60h10l-2 8h-6Z" fill="#efb23b" stroke="#b87920" stroke-width="2"/>
-          <path d="M28 86c-5-8-12-11-17-8" fill="none" stroke="#8d4a24" stroke-width="4" stroke-linecap="round"/>
-        </symbol>
-
-        <symbol id="fox-script" viewBox="0 0 120 120">
-          <use href="#fox-base"/>
-          <rect x="71" y="73" width="37" height="35" rx="5" fill="#fffaf0" stroke="#2f6949" stroke-width="2.8"/>
-          <path d="M78 82h23M78 89h18M78 96h23" stroke="#e38b37" stroke-width="3" stroke-linecap="round"/>
-          <path d="M80 73l4-7h11l4 7" fill="#78a96f" stroke="#2f6949" stroke-width="2.4"/>
-          <path d="M71 92c-8 1-12 5-15 11" fill="none" stroke="#8d4a24" stroke-width="4" stroke-linecap="round"/>
-        </symbol>
-
-        <symbol id="fox-storyboard" viewBox="0 0 120 120">
-          <use href="#fox-base"/>
-          <rect x="64" y="72" width="49" height="31" rx="5" fill="#edf7f3" stroke="#2c5e48" stroke-width="2.8"/>
-          <rect x="69" y="77" width="17" height="10" rx="2" fill="#76b9c7"/>
-          <rect x="90" y="77" width="17" height="10" rx="2" fill="#f2bd62"/>
-          <rect x="69" y="91" width="17" height="7" rx="2" fill="#f0a070"/>
-          <rect x="90" y="91" width="17" height="7" rx="2" fill="#80ad76"/>
-          <path d="M65 104h47" stroke="#2c5e48" stroke-width="3" stroke-linecap="round"/>
-        </symbol>
-
-        <symbol id="fox-camera" viewBox="0 0 120 120">
-          <use href="#fox-base"/>
-          <path d="M57 77h16l6-8h18l6 8h9v27H57Z" fill="#273d3a" stroke="#172925" stroke-width="2.8" stroke-linejoin="round"/>
-          <circle cx="88" cy="90" r="12" fill="#172925" stroke="#eff8f1" stroke-width="2.8"/>
-          <circle cx="88" cy="90" r="7" fill="#79bec4"/>
-          <circle cx="105" cy="82" r="3" fill="#f5cc62"/>
-          <path d="M59 91c-8 0-13 4-16 10" fill="none" stroke="#8d4a24" stroke-width="4" stroke-linecap="round"/>
-        </symbol>
-
-        <symbol id="fox-edit" viewBox="0 0 120 120">
-          <use href="#fox-base"/>
-          <rect x="58" y="70" width="52" height="35" rx="5" fill="#24473f" stroke="#17342e" stroke-width="2.8"/>
-          <rect x="64" y="76" width="40" height="15" rx="2" fill="#9ed1cf"/>
-          <path d="M65 96h8M76 96h13M92 96h12" stroke="#f5c95c" stroke-width="3.2" stroke-linecap="round"/>
-          <path d="M67 101h14M85 101h9M97 101h7" stroke="#ef8b5d" stroke-width="3.2" stroke-linecap="round"/>
-          <path d="M58 106h52" stroke="#17342e" stroke-width="3" stroke-linecap="round"/>
-        </symbol>
-
-        <symbol id="fox-material" viewBox="0 0 120 120">
-          <use href="#fox-base"/>
-          <path d="M58 77h18l5-7h28v38H58Z" fill="#6eb5a7" stroke="#2d6959" stroke-width="2.8" stroke-linejoin="round"/>
-          <path d="M65 85h36M65 92h27" stroke="#e9f6e8" stroke-width="3" stroke-linecap="round"/>
-          <path d="M91 71c2-8 8-12 13-13-1 6-5 12-13 13Z" fill="#7fae68"/>
-          <path d="M83 72c-1-7-5-11-10-13 0 6 3 11 10 13Z" fill="#9bc777"/>
-        </symbol>
-
-        <symbol id="fox-research" viewBox="0 0 120 120">
-          <use href="#fox-base"/>
-          <path d="M61 76 82 70l18 14-20 20-20-13Z" fill="#f7eed9" stroke="#3d7355" stroke-width="2.7" stroke-linejoin="round"/>
-          <path d="M70 80l9 7 10-8M70 92l8-3 9 7" fill="none" stroke="#79a96c" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="96" cy="72" r="5" fill="#e76f45"/>
-          <path d="M96 77c0 0-7-7-7-13a7 7 0 1 1 14 0c0 6-7 13-7 13Z" fill="#e76f45"/>
-        </symbol>
-
-        <symbol id="fox-drone" viewBox="0 0 120 120">
-          <use href="#fox-base"/>
-          <rect x="67" y="84" width="34" height="14" rx="6" fill="#29453e"/>
-          <circle cx="75" cy="91" r="3" fill="#f4cd62"/><circle cx="93" cy="91" r="3" fill="#f4cd62"/>
-          <path d="M72 81 61 72M96 81l11-9M59 70h-12M109 70h10" stroke="#29453e" stroke-width="3" stroke-linecap="round"/>
-          <ellipse cx="53" cy="70" rx="10" ry="2" fill="#7daaa0"/><ellipse cx="113" cy="70" rx="10" ry="2" fill="#7daaa0"/>
-        </symbol>
-
-        <symbol id="fox-interview" viewBox="0 0 120 120">
-          <use href="#fox-base"/>
-          <circle cx="92" cy="77" r="9" fill="#2f3c42"/>
-          <path d="M86 84 70 105" stroke="#2f3c42" stroke-width="7" stroke-linecap="round"/>
-          <path d="M70 104c-7-2-12-1-16 4" fill="none" stroke="#8d4a24" stroke-width="4" stroke-linecap="round"/>
-        </symbol>
-
-        <symbol id="fox-social" viewBox="0 0 120 120">
-          <use href="#fox-base"/>
-          <rect x="71" y="70" width="28" height="40" rx="6" fill="#fff9ef" stroke="#2d654d" stroke-width="2.8"/>
-          <circle cx="85" cy="104" r="2.3" fill="#e48b39"/>
-          <path d="M77 80h16M77 87h12M77 94h16" stroke="#79a96c" stroke-width="2.8" stroke-linecap="round"/>
-          <path d="M68 92c-8 1-12 4-15 10" fill="none" stroke="#8d4a24" stroke-width="4" stroke-linecap="round"/>
-        </symbol>
-      </defs>
-    </svg>
     <a class="skip-link" href="#studio">跳到 AI 创作区</a>
 
     <main id="top">
@@ -155,17 +49,17 @@
 
 
         <div class="mascot-rail mascot-left" aria-hidden="true">
-          <div class="mascot-card c1"><svg class="fox-role-icon" viewBox="0 0 120 120"><use href="#fox-research"/></svg><span>实地调研</span></div>
-          <div class="mascot-card c2"><svg class="fox-role-icon" viewBox="0 0 120 120"><use href="#fox-drone"/></svg><span>航拍记录</span></div>
-          <div class="mascot-card c3"><svg class="fox-role-icon" viewBox="0 0 120 120"><use href="#fox-script"/></svg><span>脚本创作</span></div>
-          <div class="mascot-card c4"><svg class="fox-role-icon" viewBox="0 0 120 120"><use href="#fox-interview"/></svg><span>采访记录</span></div>
+          <div class="mascot-card c1"><span class="fox-crop fox-7"></span><span>实地调研</span></div>
+          <div class="mascot-card c2"><span class="fox-crop fox-4"></span><span>航拍记录</span></div>
+          <div class="mascot-card c3"><span class="fox-crop fox-5"></span><span>脚本创作</span></div>
+          <div class="mascot-card c4"><span class="fox-crop fox-2"></span><span>采访记录</span></div>
         </div>
 
         <div class="mascot-rail mascot-right" aria-hidden="true">
-          <div class="mascot-card c5"><svg class="fox-role-icon" viewBox="0 0 120 120"><use href="#fox-idea"/></svg><span>创意策划</span></div>
-          <div class="mascot-card c6"><svg class="fox-role-icon" viewBox="0 0 120 120"><use href="#fox-camera"/></svg><span>摄影拍摄</span></div>
-          <div class="mascot-card c7"><svg class="fox-role-icon" viewBox="0 0 120 120"><use href="#fox-edit"/></svg><span>剪辑制作</span></div>
-          <div class="mascot-card c8"><svg class="fox-role-icon" viewBox="0 0 120 120"><use href="#fox-social"/></svg><span>文案运营</span></div>
+          <div class="mascot-card c5"><span class="fox-crop fox-8"></span><span>创意策划</span></div>
+          <div class="mascot-card c6"><span class="fox-crop fox-1"></span><span>摄影拍摄</span></div>
+          <div class="mascot-card c7"><span class="fox-crop fox-3"></span><span>剪辑制作</span></div>
+          <div class="mascot-card c8"><span class="fox-crop fox-6"></span><span>文案运营</span></div>
         </div>
 
         <div class="hero-copy">
@@ -296,32 +190,32 @@
 
         <div class="services-grid">
           <article class="service-card">
-            <svg class="service-fox" viewBox="0 0 120 120"><use href="#fox-idea"/></svg>
+            <span class="service-fox-crop fox-crop fox-8" aria-hidden="true"></span>
             <h3>选题创意</h3>
             <p>结合当地特色<br />提供贴近乡土的选题建议</p>
           </article>
           <article class="service-card">
-            <svg class="service-fox" viewBox="0 0 120 120"><use href="#fox-script"/></svg>
+            <span class="service-fox-crop fox-crop fox-5" aria-hidden="true"></span>
             <h3>剧本生成</h3>
             <p>一键生成完整剧本<br />支持多种题材与风格</p>
           </article>
           <article class="service-card">
-            <svg class="service-fox" viewBox="0 0 120 120"><use href="#fox-storyboard"/></svg>
+            <span class="service-fox-crop fox-crop fox-7" aria-hidden="true"></span>
             <h3>分镜脚本</h3>
             <p>生成分镜头脚本<br />让拍摄更清晰</p>
           </article>
           <article class="service-card">
-            <svg class="service-fox" viewBox="0 0 120 120"><use href="#fox-camera"/></svg>
+            <span class="service-fox-crop fox-crop fox-1" aria-hidden="true"></span>
             <h3>拍摄建议</h3>
             <p>提供取景、运镜<br />设备等实用建议</p>
           </article>
           <article class="service-card">
-            <svg class="service-fox" viewBox="0 0 120 120"><use href="#fox-edit"/></svg>
+            <span class="service-fox-crop fox-crop fox-3" aria-hidden="true"></span>
             <h3>剪辑方案</h3>
             <p>推荐剪辑思路<br />音乐与节奏建议</p>
           </article>
           <article class="service-card">
-            <svg class="service-fox" viewBox="0 0 120 120"><use href="#fox-material"/></svg>
+            <span class="service-fox-crop fox-crop fox-6" aria-hidden="true"></span>
             <h3>素材参考</h3>
             <p>提供拍摄灵感<br />与素材清单</p>
           </article>

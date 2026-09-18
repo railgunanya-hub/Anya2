@@ -53,7 +53,7 @@ button { cursor: pointer; }
   inset: 0;
   background:
     linear-gradient(180deg, rgba(245,250,242,.34), rgba(248,241,216,.2)),
-    url("assets/practice/gallery-06.jpg") center 56%/cover no-repeat;
+    url("assets/baiji-dawn.jpg") center 56%/cover no-repeat;
   filter: saturate(.93) brightness(1.08);
   transform: scale(1.01);
   opacity: .55;
@@ -1065,4 +1065,23 @@ footer span { font-size: .72rem; }
   .reference-services .service-card { min-height: 205px; padding-left: .4rem; padding-right: .4rem; }
   .service-fox { width: 90px; height: 90px; }
   .case-media { height: 205px; }
+}
+
+
+/* Mainland-China first-load performance */
+.reference-services,
+.reference-cases,
+.mission-band,
+footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 560px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
 }

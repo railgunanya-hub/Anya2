@@ -377,6 +377,7 @@ export default async function handler(req, res) {
 
   const prompt = typeof req.body?.prompt === "string" ? req.body.prompt.trim() : "";
   const images = Array.isArray(req.body?.images) ? req.body.images : [];
+  const rawHistory = Array.isArray(req.body?.history) ? req.body.history : [];
 
   if (!prompt) {
     return res.status(400).json({ error: "请输入要创作或咨询的内容。" });
@@ -390,6 +391,28 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "一次最多上传 4 张参考图片。" });
   }
 
+  if (rawHistory.length > 8) {
+    return res.status(400).json({ error: "连续对话上下文过长，请重新开始一个对话。" });
+  }
+
+  const historyMessages = [];
+  let historyChars = 0;
+  for (const item of rawHistory) {
+    const role = item?.role;
+    const content = typeof item?.content === "string" ? item.content.trim() : "";
+
+    if (!["user", "assistant"].includes(role) || !content || content.length > 16000) {
+      return res.status(400).json({ error: "连续对话上下文格式不正确，请重新开始一个对话。" });
+    }
+
+    historyChars += content.length;
+    if (historyChars > 48000) {
+      return res.status(400).json({ error: "连续对话内容过长，请重新开始一个对话。" });
+    }
+
+    historyMessages.push({ role, content });
+  }
+
   for (const image of images) {
     if (
       typeof image !== "string" ||
@@ -400,7 +423,11 @@ export default async function handler(req, res) {
     }
   }
 
-  const library = buildKnowledgeContext(prompt);
+  const knowledgeQuery = [
+    ...historyMessages.filter((item) => item.role === "user").map((item) => item.content),
+    prompt
+  ].join("\n");
+  const library = buildKnowledgeContext(knowledgeQuery);
 
   const userContent = images.length
     ? [
@@ -432,6 +459,7 @@ export default async function handler(req, res) {
               "下面是团队已经整理好的乡村短剧实践经验库片段。请把它们当作方法和案例参考，优先吸收结构、执行方法和判断标准；不要把案例中的创意设定自动当成用户所在地的真实事实，也不要机械照抄。\n\n" +
               library.text
           },
+          ...historyMessages,
           { role: "user", content: userContent }
         ],
         stream: false

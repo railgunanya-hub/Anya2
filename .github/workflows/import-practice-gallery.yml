@@ -1,0 +1,54 @@
+name: Import practice gallery images
+
+on:
+  push:
+    paths:
+      - ".github/workflows/import-practice-gallery.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download uploaded practice photos
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/practice
+          curl -L --fail --retry 3 "https://at.adobe.com/EWjCglcvUIZBeDay" -o assets/practice/gallery-01.jpg
+          curl -L --fail --retry 3 "https://at.adobe.com/e0ILQLkpJqyymXpx" -o assets/practice/gallery-02.jpg
+          curl -L --fail --retry 3 "https://at.adobe.com/p4ijO8x4aa1jJPOb" -o assets/practice/gallery-03.jpg
+          curl -L --fail --retry 3 "https://at.adobe.com/jnST1dgPPkaGhsqb" -o assets/practice/gallery-04.jpg
+          curl -L --fail --retry 3 "https://at.adobe.com/wyYNZ5ZgPm9zqtAa" -o assets/practice/gallery-05.jpg
+          curl -L --fail --retry 3 "https://at.adobe.com/ckY4Ki2UsEKLpMTi" -o assets/practice/gallery-06.jpg
+          curl -L --fail --retry 3 "https://at.adobe.com/O2hV9i4mcbd79zqN" -o assets/practice/gallery-07.jpg
+          curl -L --fail --retry 3 "https://at.adobe.com/JYHkA6qjxXcUP7Cr" -o assets/practice/gallery-08.jpg
+          test -s assets/practice/gallery-01.jpg
+          test -s assets/practice/gallery-02.jpg
+          test -s assets/practice/gallery-03.jpg
+          test -s assets/practice/gallery-04.jpg
+          test -s assets/practice/gallery-05.jpg
+          test -s assets/practice/gallery-06.jpg
+          test -s assets/practice/gallery-07.jpg
+          test -s assets/practice/gallery-08.jpg
+
+      - name: Commit images to repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/practice
+          if git diff --cached --quiet; then
+            echo "No image changes to commit."
+            exit 0
+          fi
+          git commit -m "Import new practice gallery images"
+          git push

@@ -9,14 +9,21 @@
   --orange: #db6a20;
   --line: rgba(22, 66, 45, .14);
   --shadow: 0 24px 68px rgba(61, 78, 49, .18);
-  font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  font-family: "Source Han Sans SC", "Noto Sans CJK SC", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
   color: var(--ink);
   background: #f5f1e8;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; overflow-x: hidden; background: #f5f1e8; }
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: #f5f1e8;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 button, textarea, input { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 img { display: block; max-width: 100%; }
@@ -275,6 +282,7 @@ nav a.active {
   object-fit: cover;
   transition: transform .5s ease;
 }
+.carousel .portrait-photo img { object-position: center 62%; }
 .carousel figure:hover img { transform: scale(1.045); }
 .carousel figcaption {
   position: absolute;
@@ -1086,14 +1094,13 @@ footer {
   }
 }
 
-
 /* ===== Final approved fox artwork: direct crops from user-provided sprite ===== */
 .fox-crop {
   display: inline-block;
   flex: 0 0 auto;
   width: 78px;
   height: 104px;
-  background-image: url("assets/fox-roles.webp");
+  background-image: url("assets/fox-roles-v2.webp");
   background-repeat: no-repeat;
   background-size: 400% 200%;
   filter: drop-shadow(0 7px 10px rgba(76, 65, 43, .13));
@@ -1385,4 +1392,101 @@ footer {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+}
+
+/* ===== Readability and visual harmony refresh ===== */
+:root {
+  --heading-font: "STZhongsong", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "SimSun", serif;
+}
+
+.brand strong,
+.hero-copy h1,
+.hero-subtitle,
+.studio-topline h2,
+.section-heading-left h2,
+.service-card h3,
+.mission-content h2,
+.result-content h2,
+.result-content h3,
+.result-content h4 {
+  font-family: var(--heading-font);
+}
+
+.brand small { font-size: .74rem; line-height: 1.45; }
+nav a { font-size: .88rem; font-weight: 650; }
+.header-status { font-size: .78rem; }
+.eyebrow { font-size: .8rem; }
+.team-ribbon { font-size: .88rem; line-height: 1.55; }
+
+.carousel {
+  border-color: rgba(255,255,255,.84);
+  box-shadow: 0 18px 48px rgba(53,82,59,.18);
+}
+.carousel figcaption { opacity: .76; }
+.carousel figure:hover figcaption,
+.carousel figure:focus-within figcaption { opacity: 1; }
+.carousel figcaption strong { font-size: .78rem; letter-spacing: .03em; }
+.carousel figcaption span { font-size: .68rem; }
+
+.studio-card {
+  border-color: rgba(255,255,255,.98);
+  box-shadow: 0 22px 60px rgba(65,84,56,.18);
+}
+.section-kicker { font-size: .72rem; }
+.studio-topline p { font-size: .86rem; }
+.tool-pills button { font-size: .76rem; }
+.composer textarea { font-size: .96rem; line-height: 1.7; }
+.upload-zone strong { font-size: .8rem; }
+.upload-zone small { font-size: .68rem; }
+.privacy-note,
+.counter { font-size: .72rem; }
+.knowledge-status { font-size: .74rem; }
+.suggestion-row { font-size: .76rem; }
+
+.reference-services {
+  background: linear-gradient(180deg, #fffdf9 0%, #fbf7ed 100%);
+}
+.reference-services .service-card,
+.case-card {
+  border: 1px solid rgba(47,111,69,.09);
+  box-shadow: 0 16px 42px rgba(65,84,56,.09);
+  transition: transform .24s ease, box-shadow .24s ease;
+}
+.reference-services .service-card:hover,
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 52px rgba(65,84,56,.14);
+}
+.reference-services .service-card p { font-size: .84rem; }
+.section-heading-left p { font-size: .96rem; line-height: 1.65; }
+.case-body p { font-size: .86rem; }
+.case-body button { font-size: .78rem; }
+.mission-content p:last-child { font-size: .96rem; }
+.mission-points span { font-size: .8rem; }
+footer span { font-size: .78rem; }
+.result-content { font-size: .96rem; }
+.source-chips span { font-size: .7rem; }
+.followup-note { font-size: .76rem; }
+
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(219,106,32,.34);
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .brand small { font-size: .7rem; }
+  .team-ribbon { font-size: .76rem; }
+  .studio-topline p { font-size: .82rem; }
+  .carousel figcaption strong { font-size: .72rem; }
+  .carousel figcaption span { font-size: .64rem; }
+}
+
+@media (max-width: 560px) {
+  .hero-subtitle { font-size: .78rem; line-height: 1.65; }
+  .composer textarea { font-size: .92rem; }
+  .result-content { font-size: .9rem; }
+  .suggestion-row { font-size: .72rem; }
 }

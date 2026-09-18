@@ -154,8 +154,8 @@ async function prepareImageForApi(file) {
   const original = await readAsDataUrl(file);
   const image = await loadImage(original);
 
-  let maxDimension = 1400;
-  let quality = 0.82;
+  let maxDimension = 1200;
+  let quality = 0.78;
   let output = original;
 
   for (let attempt = 0; attempt < 4; attempt += 1) {
@@ -172,7 +172,7 @@ async function prepareImageForApi(file) {
 
     output = canvas.toDataURL("image/webp", quality);
 
-    if (output.length <= 1_050_000) {
+    if (output.length <= 780_000) {
       return output;
     }
 

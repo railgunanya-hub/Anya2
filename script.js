@@ -194,7 +194,7 @@ function resetPage() {
 }
 
 document.querySelector("#closeResult").addEventListener("click", resetPage);
-document.querySelector("#resetView").addEventListener("click", resetPage);
+document.querySelector("#resetView")?.addEventListener("click", resetPage);
 
 const track = document.querySelector("#carouselTrack");
 const slides = [...track.children];

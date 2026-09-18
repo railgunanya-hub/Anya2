@@ -218,7 +218,7 @@ function goTo(index) {
 
 function restartTimer() {
   window.clearInterval(timer);
-  if (playing) timer = window.setInterval(() => goTo(current + 1), 4200);
+  if (playing) timer = window.setInterval(() => goTo(current + 1), 2800);
 }
 
 document.querySelector("#prevSlide").addEventListener("click", () => {
